@@ -1,0 +1,96 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Auth Container */
+.auth-container {
+    width: 100%;
+    max-width: 400px;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: #4da8da;
+}
+
+/* Input Group */
+.input-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-weight: bold;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.input-group i {
+    margin-right: 8px;
+}
+
+/* Buttons */
+.btn-auth {
+    background-color: #4da8da;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.btn-auth:hover {
+    background-color: #3581b8;
+}
+
+/* Switch Form Link */
+.switch-form {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.switch-form a {
+    color: #f4a261;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.switch-form a:hover {
+    color: #e76f51;
+}
+
+/* Hidden Class */
+.hidden {
+    display: none;
+}

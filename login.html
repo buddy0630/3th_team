@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetCare Hub - Login/Register</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="login_styles.css">
+</head>
+<body>
+    <!-- Container -->
+    <div class="auth-container">
+        <!-- Login Box -->
+        <div class="form-box" id="login-box">
+            <h2>Login</h2>
+            <form action="#">
+                <div class="input-group">
+                    <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password"><i class="fas fa-lock"></i> Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="btn-auth">Login</button>
+                <p class="switch-form">
+                    Don't have an account? <a href="#" onclick="toggleForm()">Register here</a>
+                </p>
+            </form>
+        </div>
+
+        <!-- Register Box -->
+        <div class="form-box hidden" id="register-box">
+            <h2>Register</h2>
+            <form action="#">
+                <div class="input-group">
+                    <label for="name"><i class="fas fa-user"></i> Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                </div>
+                <div class="input-group">
+                    <label for="register-email"><i class="fas fa-envelope"></i> Email</label>
+                    <input type="email" id="register-email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-group">
+                    <label for="register-password"><i class="fas fa-lock"></i> Password</label>
+                    <input type="password" id="register-password" placeholder="Create a password" required>
+                </div>
+                <button type="submit" class="btn-auth">Register</button>
+                <p class="switch-form">
+                    Already have an account? <a href="#" onclick="toggleForm()">Login here</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Toggle between Login and Register forms
+        function toggleForm() {
+            const loginBox = document.getElementById('login-box');
+            const registerBox = document.getElementById('register-box');
+            loginBox.classList.toggle('hidden');
+            registerBox.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>

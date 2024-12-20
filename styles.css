@@ -1,0 +1,323 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Navigation Bar */
+header {
+    background-color: #4da8da;
+    color: #fff;
+    padding: 1rem 2rem;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+}
+
+.btn-login {
+    background-color: #f4a261;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+.btn-login:hover {
+    background-color: #e76f51;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 3rem 2rem;
+    background-color: #9bc53d;
+    color: #fff;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-cta {
+    display: inline-block;
+    background-color: #f4a261;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-cta:hover {
+    background-color: #e76f51;
+}
+
+.hero-image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Features Section */
+.features {
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.features h2 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #4da8da;
+}
+
+.feature-cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card i {
+    font-size: 2.5rem;
+    color: #9bc53d;
+    margin-bottom: 1rem;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* About Section */
+.about {
+    background-color: #fff;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.about h2 {
+    color: #4da8da;
+    margin-bottom: 1rem;
+}
+
+.about p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* How It Works Section */
+.how-it-works {
+    background-color: #f8f9fa;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.how-it-works h2 {
+    color: #4da8da;
+    margin-bottom: 2rem;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.step {
+    width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+}
+
+.step i {
+    font-size: 2.5rem;
+    color: #f4a261;
+    margin-bottom: 1rem;
+}
+
+.step h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Testimonials Section */
+.testimonials {
+    background-color: #fff;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.testimonials h2 {
+    color: #4da8da;
+    margin-bottom: 2rem;
+}
+
+.testimonial {
+    background-color: #f8f9fa;
+    border-left: 5px solid #4da8da;
+    padding: 1.5rem;
+    margin: 1rem auto;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial span {
+    display: block;
+    margin-top: 1rem;
+    font-style: italic;
+    color: #555;
+}
+
+/* Call-to-Action Section */
+.cta {
+    background-color: #4da8da;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.cta h2 {
+    margin-bottom: 1rem;
+}
+
+.cta p {
+    margin-bottom: 1.5rem;
+}
+
+.cta .btn-cta {
+    background-color: #f4a261;
+}
+
+.cta .btn-cta:hover {
+    background-color: #e76f51;
+}
+
+/* FAQ Section */
+.faq {
+    background-color: #f8f9fa;
+    padding: 3rem 2rem;
+}
+
+.faq h2 {
+    color: #4da8da;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.faq-item {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 1rem;
+}
+
+.faq-item h3 {
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+/* Contact Section */
+.contact {
+    background-color: #fff;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.contact h2 {
+    color: #4da8da;
+    margin-bottom: 1rem;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form input, form textarea {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #4da8da;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+form button:hover {
+    background-color: #3697c5;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+.social-icons a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 1.5rem;
+    text-decoration: none;
+}

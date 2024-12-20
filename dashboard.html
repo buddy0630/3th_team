@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dashboard_style.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9L9CNnPB6uadbfn7ovJ2P3Uh7KyQ-Nzs"></script>
+</head>
+<body>
+    <!-- Dashboard Container -->
+    <div class="dashboard">
+        <h1>Pet Management Dashboard</h1>
+
+        <!-- Search and Filter -->
+        <div class="search-bar">
+            <input type="text" placeholder="Search pets by name or species..." />
+            <a href="add_pet.html" class="btn">+ Add New Pet</a>
+        </div>
+
+        <!-- Pet Profiles -->
+        <h2 class="section-title">Your Pets</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Picture</th>
+                    <th>Name</th>
+                    <th>Species</th>
+                    <th>Age</th>
+                    <th>Weight</th>
+                    <th>Health Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="pet1.jpg" alt="Buddy" width="50" /></td>
+                    <td>Buddy</td>
+                    <td>Dog</td>
+                    <td>3 years</td>
+                    <td>25 kg</td>
+                    <td>Healthy</td>
+                    <td>
+                        <a href="#" class="btn">View Profile</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="pet2.jpg" alt="Mittens" width="50" /></td>
+                    <td>Mittens</td>
+                    <td>Cat</td>
+                    <td>2 years</td>
+                    <td>5 kg</td>
+                    <td>Needs Vaccination</td>
+                    <td>
+                        <a href="#" class="btn">View Profile</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Health Records -->
+        <h2 class="section-title">Health Records</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Pet Name</th>
+                    <th>Vet Visit</th>
+                    <th>Medications</th>
+                    <th>Vaccination Due</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Buddy</td>
+                    <td>12/01/2024 - Checkup</td>
+                    <td>None</td>
+                    <td>Rabies Vaccine - 01/03/2024</td>
+                </tr>
+                <tr>
+                    <td>Mittens</td>
+                    <td>--</td>
+                    <td>Antibiotics</td>
+                    <td>Next Week</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Alerts for Vaccinations -->
+        <div class="alert">
+            Reminder: Mittens is due for a vaccination next week!
+        </div>
+
+        <!-- Upload Medical Reports -->
+        <h2 class="section-title">Upload Medical Reports</h2>
+        <form>
+            <input type="file" name="medical_report" />
+            <a href="#" class="btn">Upload</a>
+        </form>
+
+        <!-- Vet Directory -->
+        <div class="container">
+            <h1>Find Nearby Veterinarians</h1>
+            <button class="btn-find" onclick="findVets()">Find Nearby Vets</button>
+            <div id="map"></div>
+        </div>
+    </div>
+
+    <script>
+        let map, infoWindow;
+
+        // Initialize the map
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: { lat: -34.397, lng: 150.644 }, // Default location
+                zoom: 10,
+            });
+            infoWindow = new google.maps.InfoWindow();
+        }
+
+        // Function to find user's location and nearby vets
+        function findVets() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition((position) => {
+                    const pos = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude,
+                    };
+
+                    // Center map on user's location
+                    map.setCenter(pos);
+                    const userMarker = new google.maps.Marker({
+                        position: pos,
+                        map: map,
+                        title: "Your Location",
+                    });
+
+                    // Simulate Vet Locations (Static Example Data)
+                    const vets = [
+                        { name: "City Vet Clinic", lat: pos.lat + 0.01, lng: pos.lng + 0.01, id: 1 },
+                        { name: "Healthy Paws Vet", lat: pos.lat - 0.01, lng: pos.lng - 0.01, id: 2 },
+                        { name: "Animal Care Center", lat: pos.lat + 0.02, lng: pos.lng - 0.01, id: 3 },
+                    ];
+
+                    // Add vet markers on the map
+                    vets.forEach(vet => {
+                        const marker = new google.maps.Marker({
+                            position: { lat: vet.lat, lng: vet.lng },
+                            map: map,
+                            title: vet.name,
+                        });
+
+                        // Add info window and click event to go to profile page
+                        marker.addListener("click", () => {
+                            window.location.href = `vet_profile.html`;
+                        });
+
+                        const infoContent = `<div style="color:#333;">
+                                                <strong>${vet.name}</strong><br>
+                                                <span>Click marker for details</span>
+                                            </div>`;
+
+                        marker.addListener("mouseover", () => {
+                            infoWindow.setContent(infoContent);
+                            infoWindow.open(map, marker);
+                        });
+                    });
+                }, () => {
+                    handleLocationError(true, infoWindow, map.getCenter());
+                });
+            } else {
+                // Browser doesn't support Geolocation
+                handleLocationError(false, infoWindow, map.getCenter());
+            }
+        }
+
+        // Error handling for geolocation
+        function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+            infoWindow.setPosition(pos);
+            infoWindow.setContent(
+                browserHasGeolocation
+                    ? "Error: The Geolocation service failed."
+                    : "Error: Your browser doesn't support geolocation."
+            );
+            infoWindow.open(map);
+        }
+
+        // Initialize map on window load
+        window.onload = initMap;
+    </script>
+</body>
+</html>
