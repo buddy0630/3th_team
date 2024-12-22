@@ -5,104 +5,129 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pet Dashboard</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="dashboard_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: url('https://img.freepik.com/premium-vector/seamless-dog-pattern-with-paw-prints-bones-hearts-balls-cat-foot-texture-pattern-with-doggy-pawprint-bones-dog-texture-hand-drawn-vector-illustration-doodle-style-white-background_192280-1320.jpg?semt=ais_hybrid') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+
+        .dashboard {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #555;
+        }
+
+        .btn-find {
+            display: inline-block;
+            margin: 1rem 0;
+            padding: 0.8rem 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #fff;
+            background: linear-gradient(45deg, #4CAF50, #1E88E5);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-find:hover {
+            background: linear-gradient(45deg, #1E88E5, #4CAF50);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(30, 136, 229, 0.4);
+        }
+
+        #map {
+            width: 100%;
+            height: 500px;
+            margin-top: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin: 1rem 0;
+            padding: 0.6rem 1.2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #fff;
+            background: #f44336;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-back:hover {
+            background: #d32f2f;
+            box-shadow: 0 4px 15px rgba(244, 67, 54, 0.4);
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .dashboard {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .btn-find {
+                font-size: 1rem;
+            }
+
+            #map {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            #map {
+                height: 300px;
+            }
+        }
+    </style>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9L9CNnPB6uadbfn7ovJ2P3Uh7KyQ-Nzs"></script>
 </head>
 <body>
     <!-- Dashboard Container -->
     <div class="dashboard">
-        <h1>Pet Management Dashboard</h1>
-
-        <!-- Search and Filter -->
-        <div class="search-bar">
-            <input type="text" placeholder="Search pets by name or species..." />
-            <a href="add_pet.html" class="btn">+ Add New Pet</a>
-        </div>
-
-        <!-- Pet Profiles -->
-        <h2 class="section-title">Your Pets</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Picture</th>
-                    <th>Name</th>
-                    <th>Species</th>
-                    <th>Age</th>
-                    <th>Weight</th>
-                    <th>Health Status</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><img src="pet1.jpg" alt="Buddy" width="50" /></td>
-                    <td>Buddy</td>
-                    <td>Dog</td>
-                    <td>3 years</td>
-                    <td>25 kg</td>
-                    <td>Healthy</td>
-                    <td>
-                        <a href="#" class="btn">View Profile</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td><img src="pet2.jpg" alt="Mittens" width="50" /></td>
-                    <td>Mittens</td>
-                    <td>Cat</td>
-                    <td>2 years</td>
-                    <td>5 kg</td>
-                    <td>Needs Vaccination</td>
-                    <td>
-                        <a href="#" class="btn">View Profile</a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-
-        <!-- Health Records -->
-        <h2 class="section-title">Health Records</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Pet Name</th>
-                    <th>Vet Visit</th>
-                    <th>Medications</th>
-                    <th>Vaccination Due</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Buddy</td>
-                    <td>12/01/2024 - Checkup</td>
-                    <td>None</td>
-                    <td>Rabies Vaccine - 01/03/2024</td>
-                </tr>
-                <tr>
-                    <td>Mittens</td>
-                    <td>--</td>
-                    <td>Antibiotics</td>
-                    <td>Next Week</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <!-- Alerts for Vaccinations -->
-        <div class="alert">
-            Reminder: Mittens is due for a vaccination next week!
-        </div>
-
-        <!-- Upload Medical Reports -->
-        <h2 class="section-title">Upload Medical Reports</h2>
-        <form>
-            <input type="file" name="medical_report" />
-            <a href="#" class="btn">Upload</a>
-        </form>
-
         <!-- Vet Directory -->
         <div class="container">
-            <h1>Find Nearby Veterinarians</h1>
-            <button class="btn-find" onclick="findVets()">Find Nearby Vets</button>
+            <h1><i class="fas fa-paw"></i> Ойролцоох амьтны эмнэлэг хайх</h1>
             <div id="map"></div>
+            <div class="buttons">
+                <button class="btn-find" onclick="findVets()">Амьтны эмнэлэг хайх</button>
+                <br>
+                <button class="btn-back" onclick="window.location.href='index.html'">Буцах</button>
+            </div>
         </div>
     </div>
 
@@ -112,8 +137,8 @@
         // Initialize the map
         function initMap() {
             map = new google.maps.Map(document.getElementById("map"), {
-                center: { lat: -34.397, lng: 150.644 }, // Default location
-                zoom: 10,
+                center: { lat: 47.9191, lng: 106.9175 }, // Default location: Ulaanbaatar
+                zoom: 12,
             });
             infoWindow = new google.maps.InfoWindow();
         }
@@ -129,10 +154,24 @@
 
                     // Center map on user's location
                     map.setCenter(pos);
+
+                    // Add marker for user's location
                     const userMarker = new google.maps.Marker({
                         position: pos,
                         map: map,
                         title: "Your Location",
+                    });
+
+                    // Add a circle to show a 1 km radius
+                    const userCircle = new google.maps.Circle({
+                        map: map,
+                        radius: 1000, // 1 km radius in meters
+                        fillColor: '#1E88E5',
+                        strokeColor: '#AA0000',
+                        strokeOpacity: 0.6,
+                        strokeWeight: 2,
+                        fillOpacity: 0.2,
+                        center: pos,
                     });
 
                     // Simulate Vet Locations (Static Example Data)
