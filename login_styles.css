@@ -1,96 +1,139 @@
-/* Global Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"poppins",sans-serif;
 }
-
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f8f9fa;
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff), 
+                url('https://www.shutterstock.com/image-vector/seamless-patterntraces-paws-catsdogs-household-260nw-1132215506.jpg') no-repeat center center fixed;
+    background-size: cover;
 }
 
-/* Auth Container */
-.auth-container {
-    width: 100%;
-    max-width: 400px;
-    background: #fff;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
+.container{
+    background:#fff;
+    width:450px;
+    padding:1.5rem;
+    margin:50px auto;
+    border-radius:10px;
+    box-shadow:0 20px 35px rgba(0,0,1,0.9);
 }
-
-h2 {
-    margin-bottom: 1.5rem;
-    font-size: 2rem;
-    color: #4da8da;
+form{
+    margin:0 2rem;
 }
-
-/* Input Group */
-.input-group {
-    margin-bottom: 1.5rem;
-    text-align: left;
+.form-title{
+    font-size:1.5rem;
+    font-weight:bold;
+    text-align:center;
+    padding:1.3rem;
+    margin-bottom:0.4rem;
 }
-
-.input-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: #555;
-    font-weight: bold;
+input{
+    color:inherit;
+    width:100%;
+    background-color:transparent;
+    border:none;
+    border-bottom:1px solid #757575;
+    padding-left:1.5rem;
+    font-size:15px;
 }
+.input-group{
+    padding:1% 0;
+    position:relative;
 
-.input-group input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
 }
-
-.input-group i {
-    margin-right: 8px;
+.input-group i{
+    position:absolute;
+    color:black;
 }
-
-/* Buttons */
-.btn-auth {
-    background-color: #4da8da;
-    color: #fff;
-    padding: 10px;
-    width: 100%;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: bold;
+input:focus{
+    background-color: transparent;
+    outline:transparent;
+    border-bottom:2px solid hsl(327,90%,28%);
 }
-
-.btn-auth:hover {
-    background-color: #3581b8;
+input::placeholder{
+    color:transparent;
 }
-
-/* Switch Form Link */
-.switch-form {
-    margin-top: 1rem;
-    font-size: 0.9rem;
+label{
+    color:#757575;
+    position:relative;
+    left:1.2em;
+    top:-1.3em;
+    cursor:auto;
+    transition:0.3s ease all;
 }
-
-.switch-form a {
-    color: #f4a261;
-    text-decoration: none;
-    font-weight: bold;
+input:focus~label,input:not(:placeholder-shown)~label{
+    top:-3em;
+    color:hsl(327,90%,28%);
+    font-size:15px;
 }
+.recover{
+    text-align:right;
+    font-size:1rem;
+    margin-bottom:1rem;
 
-.switch-form a:hover {
-    color: #e76f51;
 }
-
-/* Hidden Class */
-.hidden {
-    display: none;
+.recover a{
+    text-decoration:none;
+    color:rgb(125,125,235);
+}
+.recover a:hover{
+    color:blue;
+    text-decoration:underline;
+}
+.btn{
+    font-size:1.1rem;
+    padding:8px 0;
+    border-radius:5px;
+    outline:none;
+    border:none;
+    width:100%;
+    background:rgb(125,125,235);
+    color:white;
+    cursor:pointer;
+    transition:0.9s;
+}
+.btn:hover{
+    background:#07001f;
+}
+.or{
+    font-size:1.1rem;
+    margin-top:0.5rem;
+    text-align:center;
+}
+.icons{
+    text-align:center;
+}
+.icons i{
+    color:rgb(125,125,235);
+    padding:0.8rem 1.5rem;
+    border-radius:10px;
+    font-size:1.5rem;
+    cursor:pointer;
+    border:2px solid #dfe9f5;
+    margin:0 15px;
+    transition:1s;
+}
+.icons i:hover{
+    background:#07001f;
+    font-size:1.6rem;
+    border:2px solid rgb(125,125,235);
+}
+.links{
+    display:flex;
+    justify-content:space-around;
+    padding:0 4rem;
+    margin-top:0.9rem;
+    font-weight:bold;
+}
+button{
+    color:rgb(125,125,235);
+    border:none;
+    background-color:transparent;
+    font-size:1rem;
+    font-weight:bold;
+}
+button:hover{
+    text-decoration:underline;
+    color:blue;
 }
