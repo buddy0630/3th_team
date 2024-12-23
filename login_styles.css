@@ -5,7 +5,7 @@
     font-family:"poppins",sans-serif;
 }
 body {
-    background: linear-gradient(to right, #e2e2e2, #c9d6ff), 
+    background: linear-gradient(to right, #e9ebeb, #f1f3f3), 
                 url('https://www.shutterstock.com/image-vector/seamless-patterntraces-paws-catsdogs-household-260nw-1132215506.jpg') no-repeat center center fixed;
     background-size: cover;
 }
@@ -75,10 +75,10 @@ input:focus~label,input:not(:placeholder-shown)~label{
 }
 .recover a{
     text-decoration:none;
-    color:rgb(125,125,235);
+    color:rgb(34, 247, 247);
 }
 .recover a:hover{
-    color:blue;
+    color:rgb(23, 227, 227);
     text-decoration:underline;
 }
 .btn{
@@ -88,7 +88,7 @@ input:focus~label,input:not(:placeholder-shown)~label{
     outline:none;
     border:none;
     width:100%;
-    background:rgb(125,125,235);
+    background:rgb(34, 247, 247);
     color:white;
     cursor:pointer;
     transition:0.9s;
@@ -105,7 +105,7 @@ input:focus~label,input:not(:placeholder-shown)~label{
     text-align:center;
 }
 .icons i{
-    color:rgb(125,125,235);
+    color:rgb(34, 247, 247);
     padding:0.8rem 1.5rem;
     border-radius:10px;
     font-size:1.5rem;
@@ -117,7 +117,7 @@ input:focus~label,input:not(:placeholder-shown)~label{
 .icons i:hover{
     background:#07001f;
     font-size:1.6rem;
-    border:2px solid rgb(125,125,235);
+    border:2px solid rgb(34, 247, 247);
 }
 .links{
     display:flex;
@@ -127,7 +127,7 @@ input:focus~label,input:not(:placeholder-shown)~label{
     font-weight:bold;
 }
 button{
-    color:rgb(125,125,235);
+    color:rgb(34, 247, 247);
     border:none;
     background-color:transparent;
     font-size:1rem;
@@ -135,5 +135,5 @@ button{
 }
 button:hover{
     text-decoration:underline;
-    color:blue;
+    color:rgb(28, 186, 238);
 }
