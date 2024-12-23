@@ -3,13 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PETTOVET - Home</title>
+    <title>PETTOVET - Нүүр</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .nav-links {
+            display: flex;
+            justify-content: space-between;
+            list-style: none;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links li a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 25px;
+            background-color: transparent;
+            transition: all 0.3s;
+        }
+
+        .nav-links li a i {
+            margin-right: 8px;
+            font-size: 18px;
+        }
+
+        .nav-links li a:hover {
+            color: #1e90ff;
+            background-color: #ffcc00;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1e90ff;
+            padding: 15px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            font-size: 24px;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .btn-login {
+            display: flex;
+            align-items: center;
+            color: #fff;
+            background-color: #007bff;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn-login i {
+            margin-right: 8px;
+        }
+
+        .btn-login:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -17,11 +93,10 @@
         <nav class="navbar">
             <div class="logo">🐾 PETTOVET</div>
             <ul class="nav-links">
-                <li><a href="#information">Өвчний мэдээлэл хайх</a></li>
-                <li><a href="dashboard.html">Амьтны эмнэлэг хайх</a></li>
-                <li><a href="#contact">Зөвлөмж, зөвлөгөө</a></li>
-                <li><a href="login.html" class="btn-login">Login</a></li>
-               
+                <li><a href="#information"><i class="fas fa-search"></i>Өвчний мэдээлэл хайх</a></li>
+                <li><a href="dashboard.html"><i class="fas fa-clinic-medical"></i>Амьтны эмнэлэг хайх</a></li>
+                <li><a href="#contact"><i class="fas fa-comments"></i>Зөвлөмж, зөвлөгөө</a></li>
+                <li><a href="login.html" class="btn-login"><i class="fas fa-user"></i>Нэвтрэх</a></li>
             </ul>
         </nav>
     </header>
@@ -29,92 +104,92 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-text">
-            <h1>Manage Your Pet's Health with Ease</h1>
-            <p>Track vaccinations, vet visits, and health records all in one place.</p>
-            <a href="login.html" class="btn-cta">Get Started</a>
+            <h1>Таны тэжээвэр амьтны эрүүл мэндийг амархан удирдаарай</h1>
+            <p>Вакцинжуулалт, амьтны эмнэлгийн үзлэг, эрүүл мэндийн бүртгэлүүдийг нэг дор хянах боломжтой.</p>
+            <a href="login.html" class="btn-cta">Эхлэх</a>
         </div>
         <div class="hero-image">
-            <img src="istockphoto-1434988210-612x612__1_-removebg-preview.png" alt="Pets Image">
+            <img src="istockphoto-1434988210-612x612__1_-removebg-preview.png" alt="Тэжээвэр амьтдын зураг">
         </div>
     </section>
 
     <!-- About Us Section -->
     <section id="about" class="about">
-        <h2>About Us</h2>
-        <p>At <strong>PetCare Hub</strong>, we believe every pet deserves the best care. Our platform helps pet owners track health records, vaccinations, and much more. Whether you're a first-time pet parent or a seasoned pet lover, we've got you covered!</p>
+        <h2>Бидний тухай</h2>
+        <p><strong>PetCare Hub</strong> нь бүх тэжээвэр амьтан хамгийн сайн халамж хүртэх ёстой гэдэгт итгэдэг. Манай платформ тэжээвэр амьтдын эзэдэд эрүүл мэндийн бүртгэл, вакцинжуулалт болон бусад зүйлсийг хянахад тусалдаг. Та анх удаа амьтны эзэн болсон эсвэл олон жилийн турш амьтантай хамт байсан хамаагүй, бид танд туслахад бэлэн!</p>
     </section>
 
     <!-- How It Works Section -->
     <section class="how-it-works">
-        <h2>How It Works</h2>
+        <h2>Хэрхэн ажилладаг вэ?</h2>
         <div class="steps">
             <div class="step">
                 <i class="fas fa-user-plus"></i>
-                <h3>Create an Account</h3>
-                <p>Sign up for free and add your pets to your dashboard.</p>
+                <h3>Бүртгэл үүсгэх</h3>
+                <p>Үнэгүй бүртгүүлж, өөрийн тэжээвэр амьтдыг нэмээрэй.</p>
             </div>
             <div class="step">
                 <i class="fas fa-notes-medical"></i>
-                <h3>Log Health Records</h3>
-                <p>Track vet visits, vaccinations, and medications.</p>
+                <h3>Эрүүл мэндийн бүртгэл хөтлөх</h3>
+                <p>Амьтны эмнэлгийн үзлэг, вакцинжуулалт, эмчилгээг хянах.</p>
             </div>
             <div class="step">
                 <i class="fas fa-bell"></i>
-                <h3>Get Reminders</h3>
-                <p>Never miss an important vet appointment or vaccine.</p>
+                <h3>Сануулагч авах</h3>
+                <p>Чухал амьтны эмнэлгийн цаг эсвэл вакцинжуулалтыг хэзээ ч бүү март.</p>
             </div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
     <section class="testimonials">
-        <h2>What Our Users Say</h2>
+        <h2>Манай хэрэглэгчид юу гэж хэлж байна</h2>
         <div class="testimonial">
-            <p>"PetCare Hub has made it so easy to manage my dog's vaccinations and health records. I can't imagine life without it!"</p>
-            <span>- Sarah M., Proud Dog Owner</span>
+            <p>"PetCare Hub нь миний нохойн вакцинжуулалт болон эрүүл мэндийн бүртгэлийг удирдахад маш амар болгосон. Үүнийг ашиглахгүйгээр амьдралыг төсөөлж чадахгүй!"</p>
+            <span>- Сара М., Нохой эзэмшигч</span>
         </div>
         <div class="testimonial">
-            <p>"A fantastic tool for every pet owner! I highly recommend it to anyone looking to track their pet's health."</p>
-            <span>- John D., Cat Lover</span>
+            <p>"Бүх тэжээвэр амьтны эзэнд зориулсан гайхалтай хэрэгсэл! Би үүнийг амьтныхаа эрүүл мэндийг хянахыг хүссэн хэнд ч санал болгоно."</p>
+            <span>- Жон Д., Муур сонирхогч</span>
         </div>
     </section>
 
     <!-- Call-to-Action Section -->
     <section class="cta">
-        <h2>Join PetCare Hub Today!</h2>
-        <p>Start managing your pet's health effortlessly.</p>
-        <a href="login.html" class="btn-cta">Sign Up Now</a>
+        <h2>Өнөөдөр PetCare Hub-тэй нэгдээрэй!</h2>
+        <p>Тэжээвэр амьтны эрүүл мэндийг хялбархан удирдаж эхлээрэй.</p>
+        <a href="login.html" class="btn-cta">Бүртгүүлэх</a>
     </section>
 
     <!-- FAQ Section -->
     <section class="faq">
-        <h2>Frequently Asked Questions</h2>
+        <h2>Түгээмэл асуултууд</h2>
         <div class="faq-item">
-            <h3>How do I add my pet's information?</h3>
-            <p>Once you log in, you can easily add your pet's details from the dashboard.</p>
+            <h3>Тэжээвэр амьтныхаа мэдээллийг хэрхэн нэмэх вэ?</h3>
+            <p>Нэвтэрсний дараа та удирдах самбараас амьтныхаа мэдээллийг хялбархан нэмэх боломжтой.</p>
         </div>
         <div class="faq-item">
-            <h3>Can I track multiple pets?</h3>
-            <p>Yes! You can add and manage multiple pets within a single account.</p>
+            <h3>Би олон амьтныг хянаж болох уу?</h3>
+            <p>Тийм ээ! Та нэг дансанд олон амьтдыг нэмэх, удирдах боломжтой.</p>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
-        <h2>Contact Us</h2>
-        <p>Have questions or need help? Drop us a message below.</p>
+        <h2>Бидэнтэй холбогдох</h2>
+        <p>Асуулт байвал эсвэл тусламж хэрэгтэй бол доорх мессеж илгээнэ үү.</p>
         <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit">Send Message</button>
+            <input type="text" placeholder="Таны нэр" required>
+            <input type="email" placeholder="Таны и-мэйл" required>
+            <textarea placeholder="Таны мессеж" rows="5" required></textarea>
+            <button type="submit">Мессеж илгээх</button>
         </form>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <p>&copy; 2024 PetCare Hub | Designed with ❤️ for Pet Lovers</p>
+            <p>&copy; 2024 PetCare Hub | Тэжээвэр амьтны эзэмшигчдэд зориулав ❤️</p>
             <div class="social-icons">
                 <a href="#"><i class="fab fa-facebook"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
