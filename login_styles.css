@@ -75,10 +75,10 @@ input:focus~label,input:not(:placeholder-shown)~label{
 }
 .recover a{
     text-decoration:none;
-    color:rgb(34, 247, 247);
+    color:#4da8da);
 }
 .recover a:hover{
-    color:rgb(23, 227, 227);
+    color:#4da8da);
     text-decoration:underline;
 }
 .btn{
@@ -88,7 +88,7 @@ input:focus~label,input:not(:placeholder-shown)~label{
     outline:none;
     border:none;
     width:100%;
-    background:rgb(34, 247, 247);
+    background:#4da8da;
     color:white;
     cursor:pointer;
     transition:0.9s;
@@ -105,7 +105,7 @@ input:focus~label,input:not(:placeholder-shown)~label{
     text-align:center;
 }
 .icons i{
-    color:rgb(34, 247, 247);
+    color:#4da8da;
     padding:0.8rem 1.5rem;
     border-radius:10px;
     font-size:1.5rem;
@@ -117,7 +117,7 @@ input:focus~label,input:not(:placeholder-shown)~label{
 .icons i:hover{
     background:#07001f;
     font-size:1.6rem;
-    border:2px solid rgb(34, 247, 247);
+    border:2px solid #4da8da;
 }
 .links{
     display:flex;
@@ -127,7 +127,7 @@ input:focus~label,input:not(:placeholder-shown)~label{
     font-weight:bold;
 }
 button{
-    color:rgb(34, 247, 247);
+    color:#4da8da;
     border:none;
     background-color:transparent;
     font-size:1rem;
@@ -135,5 +135,5 @@ button{
 }
 button:hover{
     text-decoration:underline;
-    color:rgb(28, 186, 238);
+    color:#4da8da;
 }

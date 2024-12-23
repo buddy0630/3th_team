@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PETTOVET - Хайлт</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f3fdfd; /* Light, calming blue-green background */
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #2a9d8f; /* Pet-health related soothing green */
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px; /* Slightly lowered for better alignment */
+            right: 20px;
+            background-color: #21867a;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #176554;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .search-bar button {
+            padding: 10px 20px;
+            background-color: #2a9d8f;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .search-bar button:hover {
+            background-color: #21867a; /* Darker shade of green */
+        }
+
+        .results {
+            margin-top: 20px;
+        }
+
+        .result-item {
+            background-color: #e8f9f4; /* Light teal card */
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .result-item h3 {
+            margin: 0 0 10px;
+            color: #2a9d8f;
+        }
+
+        .result-item p {
+            margin: 0;
+            color: #555;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        PETTOVET - Амьтны эрүүл мэндийн хайлт
+        <button class="back-button" onclick="window.history.back();">Буцах</button>
+    </div>
+
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Өвчин, шинж тэмдэг эсвэл зөвлөгөө хайх...">
+            <button id="searchButton">Хайх</button>
+        </div>
+
+        <div class="results" id="results">
+            <!-- Results will appear here -->
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 PETTOVET. Бүх эрх хуулиар хамгаалагдсан.
+    </div>
+
+    <script>
+        document.getElementById('searchButton').addEventListener('click', function() {
+            const query = document.getElementById('searchInput').value;
+            const resultsContainer = document.getElementById('results');
+
+            resultsContainer.innerHTML = ''; // Clear previous results
+
+            if (query.trim() === '') {
+                resultsContainer.innerHTML = '<p>Хайх үгээ оруулна уу.</p>';
+                return;
+            }
+
+            // Simulated search results
+            const results = [
+                { title: 'Нохойд түгээмэл тохиолдох өвчнүүд', description: 'Нохойнд тохиолдох хамгийн түгээмэл өвчнүүдийн тухай.' },
+                { title: 'Муурны вакцинжуулалтын хуваарь', description: 'Муурыг эрүүл байлгах вакцины удирдамж.' },
+                { title: 'Амьтны харшлын шинж тэмдгүүд', description: 'Амьтанд харшлын шинж тэмдэгийг таньж, эмчлэх арга.' }
+            ];
+
+            results.forEach(result => {
+                const resultItem = document.createElement('div');
+                resultItem.className = 'result-item';
+
+                resultItem.innerHTML = `
+                    <h3>${result.title}</h3>
+                    <p>${result.description}</p>
+                `;
+
+                resultsContainer.appendChild(resultItem);
+            });
+        });
+    </script>
+</body>
+</html>
