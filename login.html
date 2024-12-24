@@ -6,87 +6,152 @@
     <title>Register & Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="login_styles.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js" defer></script>
 </head>
 <body>
     <div class="container" id="signup" style="display:none;">
         <h1 class="form-title">Register</h1>
-        <form method="post" action="register.php">
+        <form onsubmit="signUp(event)">
             <div class="input-group">
-                <i class="fas fa-user"></i>
-                <input type="text" name="fName" id="fName" placeholder="First Name" required>
-                <label for="fname">First Name</label>
+               
+                <input type="text" id="signup-fname" placeholder="First Name" required>
             </div>
             <div class="input-group">
-                <i class="fas fa-user"></i>
-                <input type="text" name="lName" id="lName" placeholder="Last Name" required>
-                <label for="lName">Last Name</label>
+                
+                <input type="text" id="signup-lname" placeholder="Last Name" required>
             </div>
             <div class="input-group">
-                <i class="fas fa-envelope"></i>
-                <input type="email" name="email" id="email" placeholder="Email" required>
-                <label for="email">Email</label>
+                
+                <input type="email" id="signup-email" placeholder="Email" required>
             </div>
             <div class="input-group">
-                <i class="fas fa-lock"></i>
-                <input type="password" name="password" id="password" placeholder="Password" required>
-                <label for="password">Password</label>
+               
+                <input type="password" id="signup-password" placeholder="Password" required>
             </div>
-            <input type="submit" class="btn" value="Sign Up" name="signUp">
+            <input type="submit" class="btn" value="Sign Up">
         </form>
         <p class="or">----------or--------</p>
         <div class="icons">
-            <i class="fab fa-google"></i>
-            <i class="fab fa-facebook"></i>
+            <div id="google-signin-button"></div>
         </div>
         <div class="links">
-            <p>Already Have Account ?</p>
+            <p>Already Have Account?</p>
             <button id="signInButton">Sign In</button>
         </div>
     </div>
 
     <div class="container" id="signIn">
         <h1 class="form-title">Sign In</h1>
-        <form method="post" action="dashboard.php">
+        <form onsubmit="login(event)">
             <div class="input-group">
-                <i class="fas fa-envelope"></i>
-                <input type="email" name="email" id="email" value="example@gmail.com" placeholder="Email" required>
-                <label for="email">Email</label>
+                
+                <input type="email" id="login-email" placeholder="Email" required>
             </div>
             <div class="input-group">
-                <i class="fas fa-lock"></i>
-                <input type="password" name="password" id="password" value="password123" placeholder="Password" required>
-                <label for="password">Password</label>
+                
+                <input type="password" id="login-password" placeholder="Password" required>
             </div>
             <p class="recover">
                 <a href="#">Recover Password</a>
             </p>
-            <input type="submit" class="btn" value="Sign In" name="signIn">
+            <input type="submit" class="btn" value="Sign In">
         </form>
         <p class="or">----------or--------</p>
         <div class="icons">
-            <i class="fab fa-google"></i>
-            <i class="fab fa-facebook"></i>
+            <div id="google-signin-button-signin"></div>
         </div>
         <div class="links">
-            <p>Don't have account yet?</p>
+            <p>Don't have an account yet?</p>
             <button id="signUpButton">Sign Up</button>
         </div>
     </div>
 
     <script>
-        const signUpButton = document.getElementById('signUpButton');
-        const signInButton = document.getElementById('signInButton');
-        const signInForm = document.getElementById('signIn');
-        const signUpForm = document.getElementById('signup');
+        const firebaseConfig = {
+            apiKey: "AIzaSyC9LzLVOkHttnOk6r7WmhE_hdDmBiSAX6Q",
+            authDomain: "it-udirtgal-1d0f0.firebaseapp.com",
+            projectId: "it-udirtgal-1d0f0",
+            storageBucket: "it-udirtgal-1d0f0.appspot.com",
+            messagingSenderId: "779825070222",
+            appId: "1:779825070222:web:f75505e545e08bcb14c9df",
+            measurementId: "G-K7JJZ8SQHQ"
+        };
 
-        signUpButton.addEventListener('click', function() {
-            signInForm.style.display = "none";
-            signUpForm.style.display = "block";
+        let auth;
+
+        function initializeFirebase() {
+            const app = firebase.initializeApp(firebaseConfig);
+            auth = firebase.auth();
+            initializeGoogleSignIn();
+        }
+
+        function initializeGoogleSignIn() {
+            google.accounts.id.initialize({
+                client_id: "820094831233-i1gbs561cchbm7dcmv2grmjc89pjpqnc.apps.googleusercontent.com",
+                callback: handleCredentialResponse
+            });
+            google.accounts.id.renderButton(
+                document.getElementById("google-signin-button"),
+                { theme: "outline", size: "large" }
+            );
+            google.accounts.id.renderButton(
+                document.getElementById("google-signin-button-signin"),
+                { theme: "outline", size: "large" }
+            );
+        }
+
+        function handleCredentialResponse(response) {
+            const data = jwt_decode(response.credential);
+            document.cookie = `name=${data.name}; path=/; max-age=86400;`;
+            document.cookie = `email=${data.email}; path=/; max-age=86400;`;
+            document.cookie = `picture=${data.picture}; path=/; max-age=86400;`;
+            window.location.href = "index.html";
+        }
+
+        function signUp(event) {
+            event.preventDefault();
+            const email = document.getElementById('signup-email').value;
+            const password = document.getElementById('signup-password').value;
+
+            auth.createUserWithEmailAndPassword(email, password)
+                .then(() => {
+                    alert("Sign up successful!");
+                })
+                .catch((error) => {
+                    alert("Error signing up: " + error.message);
+                });
+        }
+
+        function login(event) {
+            event.preventDefault();
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+
+            auth.signInWithEmailAndPassword(email, password)
+                .then(() => {
+                    alert("Login successful!");
+                    document.cookie = `email=${email}; path=/; max-age=86400;`;
+                    window.location.href = "index.html";
+                })
+                .catch((error) => {
+                    alert("Error logging in: " + error.message);
+                });
+        }
+
+        document.getElementById('signUpButton').addEventListener('click', () => {
+            document.getElementById('signIn').style.display = 'none';
+            document.getElementById('signup').style.display = 'block';
         });
-        signInButton.addEventListener('click', function() {
-            signInForm.style.display = "block";
-            signUpForm.style.display = "none";
+
+        document.getElementById('signInButton').addEventListener('click', () => {
+            document.getElementById('signIn').style.display = 'block';
+            document.getElementById('signup').style.display = 'none';
         });
+
+        document.addEventListener('DOMContentLoaded', initializeFirebase);
     </script>
 </body>
 </html>

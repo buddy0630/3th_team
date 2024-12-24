@@ -18,7 +18,6 @@
             background: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            position: relative;
         }
 
         h1 {
@@ -48,45 +47,40 @@
 </head>
 <body>
     <button class="btn-back" onclick="window.history.back()">Буцах</button>
-
     <div class="profile-container">
-        <h1>Малын эмнэлгийн мэдээлэл</h1>
-        <p><strong>Нэр:</strong> Erhem and</p>
-        <p><strong>Утас:</strong> 111-222-3333</p>
-        <p><strong>Ажиллах цаг:</strong> 08:00 - 20:00</p>
-        <p><strong>Хаяг:</strong> Чингэлтэй дүүрэг, 5-р хороо</p>
+        <!-- Data will be dynamically populated -->
     </div>
+    <script>
+        const vets = [
+            { id: 1, name: "Erhem and", phone: "111-222-3333", hours: "08:00 - 20:00", address: "Чингэлтэй дүүрэг, 5-р хороо" },
+            { id: 2, name: "Ervvl savar", phone: "222-333-4444", hours: "09:00 - 18:00", address: "Сүхбаатар дүүрэг, 1-р хороо" },
+            { id: 3, name: "Tejeever naiz", phone: "333-444-5555", hours: "07:00 - 21:00", address: "Баянгол дүүрэг, 3-р хороо" },
+            { id: 4, name: "Mal emneleg", phone: "444-555-6666", hours: "10:00 - 19:00", address: "Хан-Уул дүүрэг, 15-р хороо" },
+            { id: 5, name: "Az jargal", phone: "555-666-7777", hours: "06:00 - 22:00", address: "Сонгинохайрхан дүүрэг, 4-р хороо" },
+        ];
 
-    <div class="profile-container">
-        <h1>Малын эмнэлгийн мэдээлэл</h1>
-        <p><strong>Нэр:</strong> Ervvl savar</p>
-        <p><strong>Утас:</strong> 222-333-4444</p>
-        <p><strong>Ажиллах цаг:</strong> 09:00 - 18:00</p>
-        <p><strong>Хаяг:</strong> Сүхбаатар дүүрэг, 1-р хороо</p>
-    </div>
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
 
-    <div class="profile-container">
-        <h1>Малын эмнэлгийн мэдээлэл</h1>
-        <p><strong>Нэр:</strong> Tejeever naiz</p>
-        <p><strong>Утас:</strong> 333-444-5555</p>
-        <p><strong>Ажиллах цаг:</strong> 07:00 - 21:00</p>
-        <p><strong>Хаяг:</strong> Баянгол дүүрэг, 3-р хороо</p>
-    </div>
+        document.addEventListener("DOMContentLoaded", () => {
+            const vetId = getQueryParam("id");
+            const vet = vets.find(v => v.id == vetId);
 
-    <div class="profile-container">
-        <h1>Малын эмнэлгийн мэдээлэл</h1>
-        <p><strong>Нэр:</strong> Mal emneleg</p>
-        <p><strong>Утас:</strong> 444-555-6666</p>
-        <p><strong>Ажиллах цаг:</strong> 10:00 - 19:00</p>
-        <p><strong>Хаяг:</strong> Хан-Уул дүүрэг, 15-р хороо</p>
-    </div>
-
-    <div class="profile-container">
-        <h1>Малын эмнэлгийн мэдээлэл</h1>
-        <p><strong>Нэр:</strong> Az jargal</p>
-        <p><strong>Утас:</strong> 555-666-7777</p>
-        <p><strong>Ажиллах цаг:</strong> 06:00 - 22:00</p>
-        <p><strong>Хаяг:</strong> Сонгинохайрхан дүүрэг, 4-р хороо</p>
-    </div>
+            if (vet) {
+                const profileContainer = document.querySelector(".profile-container");
+                profileContainer.innerHTML = `
+                    <h1>Малын эмнэлгийн мэдээлэл</h1>
+                    <p><strong>Нэр:</strong> ${vet.name}</p>
+                    <p><strong>Утас:</strong> ${vet.phone}</p>
+                    <p><strong>Ажиллах цаг:</strong> ${vet.hours}</p>
+                    <p><strong>Хаяг:</strong> ${vet.address}</p>
+                `;
+            } else {
+                alert("Малын эмнэлгийн мэдээлэл олдсонгүй.");
+            }
+        });
+    </script>
 </body>
 </html>
