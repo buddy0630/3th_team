@@ -7,13 +7,31 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-dyHFfUxMa9aCYxVxzFPLmRV2J2S3cp9SezQO9E+uTL6BXjr/fem29xsIedlrGp0Bfy5G/9PqUn0FN9TKEr6hzg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
     <style>
-        .nav-links {
+        /* Navbar styles */
+        .navbar {
             display: flex;
             justify-content: space-between;
+            align-items: center;
+            background-color: #1e90ff;
+            padding: 15px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            font-size: 24px;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
             list-style: none;
             padding: 0;
         }
@@ -42,108 +60,38 @@
 
         .nav-links li a:hover {
             color: #1e90ff;
-            background-color: #76dce7;
+            background-color: #b9eff5;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #1e90ff;
-            padding: 15px 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .logo {
-            font-size: 24px;
-            color: white;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-        }
-
-        .btn-login {
+        /* Profile icon styles */
+        .profile {
             display: flex;
             align-items: center;
             color: #fff;
-            background-color: #007bff;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-size: 16px;
-            font-weight: bold;
             text-decoration: none;
-            transition: background-color 0.3s, transform 0.2s;
+            font-size: 16px;
+            font-weight: 600;
+            background-color: #00c8ff;
+            padding: 5px 10px;
+            border-radius: 25px;
+            transition: background-color 0.3s;
         }
 
-        .btn-login i {
-            margin-right: 8px;
+        .profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
         }
 
-        .btn-login:hover {
+        .profile:hover {
             background-color: #0056b3;
-            transform: scale(1.1);
         }
 
-        .services {
-            padding: 50px 30px;
-            background-color: #f4f4f4;
-            text-align: center;
+        .profile span {
+            color: white;
         }
-
-        .services h2 {
-            font-size: 32px;
-            color: #333;
-            margin-bottom: 30px;
-        }
-
-        .services {
-    padding: 50px 30px;
-    background-color: #f4f4f4;
-    text-align: center;
-    display: flex;
-    justify-content: space-around;
-    gap: 30px; /* To add space between the services */
-    flex-wrap: wrap; /* Allow the items to wrap on smaller screens */
-}
-
-.service {
-    flex: 1 1 30%; /* Flex-grow, flex-shrink, and base width */
-    min-width: 280px; /* Ensures a minimum width for smaller screens */
-    margin: 0 15px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.service:hover {
-    transform: scale(1.05);
-}
-
-.service i {
-    font-size: 50px;
-    color: #1e90ff;
-    margin-bottom: 15px;
-}
-
-.service h3 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.service p {
-    font-size: 16px;
-    color: #666;
-}
-
     </style>
 </head>
 <body>
@@ -152,10 +100,14 @@
         <nav class="navbar">
             <div class="logo">🐾 PETTOVET</div>
             <ul class="nav-links">
-                <li><a href="#about"><i class="fas fa-search"></i>About</a></li>
-                <li><a href="#services"><i class="fas fa-clinic-medical"></i>Services</a></li>
-                <li><a href="#contact"><i class="fas fa-comments"></i>Contact Us</a></li>
-                <li><a href="login.html" class="btn-login"><i class="fas fa-user"></i>Нэвтрэх</a></li>
+                <li><a href="search.html"><i class="fas fa-search"></i>Өвчний мэдээлэл хайх</a></li>
+                <li><a href="dashboard.html"><i class="fas fa-clinic-medical"></i>Амьтны эмнэлэг хайх</a></li>
+                <li><a href="zowlomj.html"><i class="fas fa-comments"></i>Зөвлөмж, зөвлөгөө</a></li>
+                <li>
+                    <a href="add_pet.html" class="profile">
+                        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="Profile Picture">
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
@@ -163,16 +115,14 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-text">
-            <h1>Та тэжээвэр амьтны эрүүл мэндийг амархан удирдаарай</h1>
-            
+            <h1>Таны тэжээвэр амьтны эрүүл мэндийг амархан удирдаарай</h1>
+            <p>Вакцинжуулалт, амьтны эмнэлгийн үзлэг, эрүүл мэндийн бүртгэлүүдийг нэг дор хянах боломжтой.</p>
             <a href="login.html" class="btn-cta">Эхлэх</a>
         </div>
         <div class="hero-image">
             <img src="istockphoto-1434988210-612x612__1_-removebg-preview.png" alt="Тэжээвэр амьтдын зураг">
         </div>
     </section>
-
-    
 
     <!-- About Us Section -->
     <section id="about" class="about">
@@ -221,25 +171,7 @@
         <p>Тэжээвэр амьтны эрүүл мэндийг хялбархан удирдаж эхлээрэй.</p>
         <a href="login.html" class="btn-cta">Бүртгүүлэх</a>
     </section>
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <h2>Манай Үйлчилгээ</h2>
-        <div class="service">
-            <i class="fas fa-stethoscope"></i>
-            <h3>Амьтны эмнэлэгийн байршил</h3>
-            <p>Таньд ойр амьтны эмнэлэгийг харуулдаг ба тухайн эмнэлэгийн байршлыг зааж өгнө.</p>
-        </div>
-        <div class="service">
-            <i class="fas fa-syringe"></i>
-            <h3>Өвчний хайлт</h3>
-            <p>Тэжээвэр амьтан тань илэрч буй шинж тэмдэгээр хайхад байж болох өвчинг харуулж эмчилгээ хэлнэ .</p>
-        </div>
-        <div class="service">
-            <i class="fas fa-paw"></i>
-            <h3>Гэрийн тэжээмэл амьтны зөвлөгөө</h3>
-            <p>Тэжээвэр амьтан тань тавигдах ёстой энгийн зөвлөмж зөвлөгөөг хүргэнэ.</p>
-        </div>
-    </section>
+
     <!-- FAQ Section -->
     <section class="faq">
         <h2>Түгээмэл асуултууд</h2>
@@ -253,7 +185,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" style="padding: 2rem; background-color: #f8f9fa; border-radius: 8px; max-width: 600px; margin: 2rem auto; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
         <h2 style="text-align: center; margin-bottom: 1rem; color: #333;">Бидэнтэй холбогдох</h2>
         <form id="contactForm" style="display: flex; flex-direction: column; gap: 1rem;">
