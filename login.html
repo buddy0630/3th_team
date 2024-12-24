@@ -108,7 +108,7 @@
             document.cookie = `name=${data.name}; path=/; max-age=86400;`;
             document.cookie = `email=${data.email}; path=/; max-age=86400;`;
             document.cookie = `picture=${data.picture}; path=/; max-age=86400;`;
-            window.location.href = "index.html";
+            window.location.href = "home.html";
         }
 
         function signUp(event) {
@@ -134,7 +134,7 @@
                 .then(() => {
                     alert("Login successful!");
                     document.cookie = `email=${email}; path=/; max-age=86400;`;
-                    window.location.href = "index.html";
+                    window.location.href = "home.html";
                 })
                 .catch((error) => {
                     alert("Error logging in: " + error.message);
