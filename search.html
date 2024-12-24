@@ -138,35 +138,65 @@
 
     <script>
         document.getElementById('searchButton').addEventListener('click', function() {
-            const query = document.getElementById('searchInput').value;
+            const query = document.getElementById('searchInput').value.toLowerCase();
             const resultsContainer = document.getElementById('results');
-
+    
             resultsContainer.innerHTML = ''; // Clear previous results
-
+    
             if (query.trim() === '') {
                 resultsContainer.innerHTML = '<p>Хайх үгээ оруулна уу.</p>';
                 return;
             }
-
-            // Simulated search results
+    
+            // Simulated search results with treatment and details for each symptom
             const results = [
-                { title: 'Нохойд түгээмэл тохиолдох өвчнүүд', description: 'Нохойнд тохиолдох хамгийн түгээмэл өвчнүүдийн тухай.' },
-                { title: 'Муурны вакцинжуулалтын хуваарь', description: 'Муурыг эрүүл байлгах вакцины удирдамж.' },
-                { title: 'Амьтны харшлын шинж тэмдгүүд', description: 'Амьтанд харшлын шинж тэмдэгийг таньж, эмчлэх арга.' }
+                { 
+                    title: 'Хоолны дуршил буурах / хоол идэхгүй байх', 
+                    description: 'Хоол идэхгүй байх, идсэн ч буцааж гулигах шинж тэмдэг илэрнэ.',
+                    treatment: 'Эмчлэх арга: Хоолондоо таарах эмчилгээ хийх, шингэнийг нөхөх, витамин хэрэглэж дархлаа нэмэгдүүлэх.',
+                    details: 'Цусны хэмнэл алдагдах, шингэний алдагдал, хордлого зэрэг шинж тэмдгүүд илэрч болно.'
+                },
+                { 
+                    title: 'Номойрч, хэвтэх, хөдөлгөөн багасах', 
+                    description: 'Нохой хэвтэж, хөдөлгөөнөө багасгадаг бол вирусын шинж тэмдгийг анхааралтай хяна.',
+                    treatment: 'Эмчлэх арга: Вакцинжуулалт хийлгэх, усан тэжээлтэй хоололт, хордлого тайлах эмчилгээ.',
+                    details: 'Шинж тэмдгийн хүндрэлийг урьдчилан сэргийлэхийн тулд эрүүл мэндийн үзлэгт хамруулж болно.'
+                },
+                { 
+                    title: 'Парвовирус', 
+                    description: 'ПАРВОВИРУС нь нохойны өвчин бөгөөд маш хүндэрч болзошгүй.',
+                    treatment: 'Эмчлэх арга: Парвовирусын вакциныг цаг тухайд нь хийх, шингэн болон давс эрдэс нөхөх.',
+                    details: 'Үүний үр дүнд сөрөг үр дагавар гарахаас сэргийлж, эрүүл мэндийн мэргэжилтэнтэй зөвлөлдөх хэрэгтэй.'
+                }
             ];
-
-            results.forEach(result => {
+    
+            // Filter the results based on the query
+            const filteredResults = results.filter(result => 
+                result.title.toLowerCase().includes(query) || 
+                result.description.toLowerCase().includes(query)
+            );
+    
+            if (filteredResults.length === 0) {
+                resultsContainer.innerHTML = '<p>Таны хайсан мэдээлэл олдсонгүй.</p>';
+                return;
+            }
+    
+            // Display filtered results
+            filteredResults.forEach(result => {
                 const resultItem = document.createElement('div');
                 resultItem.className = 'result-item';
-
+    
                 resultItem.innerHTML = `
                     <h3>${result.title}</h3>
                     <p>${result.description}</p>
+                    <p><strong>Эмчилгээ:</strong> ${result.treatment}</p>
+                    <p><strong>Дэлгэрэнгүй:</strong> ${result.details}</p>
                 `;
-
+    
                 resultsContainer.appendChild(resultItem);
             });
         });
     </script>
+    
 </body>
 </html>

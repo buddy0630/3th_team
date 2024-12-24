@@ -18,20 +18,75 @@
             background: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
 
         h1 {
             color: #4da8da;
         }
+
+        .btn-back {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 0.6rem 1.2rem;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #fff;
+            background-color: #4da8da;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-back:hover {
+            background-color: #357ca5;
+        }
     </style>
 </head>
 <body>
+    <button class="btn-back" onclick="window.history.back()">Буцах</button>
+
     <div class="profile-container">
-        <h1>Vet Profile</h1>
-        <p><strong>Name:</strong> Healthy Paws Vet</p>
-        <p><strong>Specialization:</strong> General Vet</p>
-        <p><strong>Contact:</strong> +1-123-456-789</p>
-        <p><strong>Address:</strong> 123 Vet Street, City</p>
+        <h1>Малын эмнэлгийн мэдээлэл</h1>
+        <p><strong>Нэр:</strong> Erhem and</p>
+        <p><strong>Утас:</strong> 111-222-3333</p>
+        <p><strong>Ажиллах цаг:</strong> 08:00 - 20:00</p>
+        <p><strong>Хаяг:</strong> Чингэлтэй дүүрэг, 5-р хороо</p>
+    </div>
+
+    <div class="profile-container">
+        <h1>Малын эмнэлгийн мэдээлэл</h1>
+        <p><strong>Нэр:</strong> Ervvl savar</p>
+        <p><strong>Утас:</strong> 222-333-4444</p>
+        <p><strong>Ажиллах цаг:</strong> 09:00 - 18:00</p>
+        <p><strong>Хаяг:</strong> Сүхбаатар дүүрэг, 1-р хороо</p>
+    </div>
+
+    <div class="profile-container">
+        <h1>Малын эмнэлгийн мэдээлэл</h1>
+        <p><strong>Нэр:</strong> Tejeever naiz</p>
+        <p><strong>Утас:</strong> 333-444-5555</p>
+        <p><strong>Ажиллах цаг:</strong> 07:00 - 21:00</p>
+        <p><strong>Хаяг:</strong> Баянгол дүүрэг, 3-р хороо</p>
+    </div>
+
+    <div class="profile-container">
+        <h1>Малын эмнэлгийн мэдээлэл</h1>
+        <p><strong>Нэр:</strong> Mal emneleg</p>
+        <p><strong>Утас:</strong> 444-555-6666</p>
+        <p><strong>Ажиллах цаг:</strong> 10:00 - 19:00</p>
+        <p><strong>Хаяг:</strong> Хан-Уул дүүрэг, 15-р хороо</p>
+    </div>
+
+    <div class="profile-container">
+        <h1>Малын эмнэлгийн мэдээлэл</h1>
+        <p><strong>Нэр:</strong> Az jargal</p>
+        <p><strong>Утас:</strong> 555-666-7777</p>
+        <p><strong>Ажиллах цаг:</strong> 06:00 - 22:00</p>
+        <p><strong>Хаяг:</strong> Сонгинохайрхан дүүрэг, 4-р хороо</p>
     </div>
 </body>
 </html>

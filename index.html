@@ -7,13 +7,31 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-dyHFfUxMa9aCYxVxzFPLmRV2J2S3cp9SezQO9E+uTL6BXjr/fem29xsIedlrGp0Bfy5G/9PqUn0FN9TKEr6hzg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
     <style>
-        .nav-links {
+        /* Navbar styles */
+        .navbar {
             display: flex;
             justify-content: space-between;
+            align-items: center;
+            background-color: #1e90ff;
+            padding: 15px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            font-size: 24px;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
             list-style: none;
             padding: 0;
         }
@@ -42,48 +60,37 @@
 
         .nav-links li a:hover {
             color: #1e90ff;
-            background-color: #ffcc00;
+            background-color: #b9eff5;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #1e90ff;
-            padding: 15px 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .logo {
-            font-size: 24px;
-            color: white;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-        }
-
-        .btn-login {
+        /* Profile icon styles */
+        .profile {
             display: flex;
             align-items: center;
             color: #fff;
-            background-color: #007bff;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-size: 16px;
-            font-weight: bold;
             text-decoration: none;
-            transition: background-color 0.3s, transform 0.2s;
+            font-size: 16px;
+            font-weight: 600;
+            background-color: #00c8ff;
+            padding: 5px 10px;
+            border-radius: 25px;
+            transition: background-color 0.3s;
         }
 
-        .btn-login i {
-            margin-right: 8px;
+        .profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
         }
 
-        .btn-login:hover {
+        .profile:hover {
             background-color: #0056b3;
-            transform: scale(1.1);
+        }
+
+        .profile span {
+            color: white;
         }
     </style>
 </head>
@@ -95,8 +102,12 @@
             <ul class="nav-links">
                 <li><a href="search.html"><i class="fas fa-search"></i>Өвчний мэдээлэл хайх</a></li>
                 <li><a href="dashboard.html"><i class="fas fa-clinic-medical"></i>Амьтны эмнэлэг хайх</a></li>
-                <li><a href="#contact"><i class="fas fa-comments"></i>Зөвлөмж, зөвлөгөө</a></li>
-                <li><a href="login.html" class="btn-login"><i class="fas fa-user"></i>Нэвтрэх</a></li>
+                <li><a href="zowlomj.html"><i class="fas fa-comments"></i>Зөвлөмж, зөвлөгөө</a></li>
+                <li>
+                    <a href="add_pet.html" class="profile">
+                        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="Profile Picture">
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>

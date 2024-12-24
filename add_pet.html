@@ -1,48 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Your Pet - PetCare Hub</title>
+    <title>Таны тэжээвэр амьтны мэдээлэл - PetCare Hub</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="add_pet_styles.css">
 </head>
 <body>
     <!-- Add Pet Form -->
     <div class="add-pet-container">
-        <h2>Add Your Pet's Information</h2>
-        <form action="dashboard.html" method="POST">
+        <h2>Тэжээвэр амьтныхаа мэдээллийг нэмэх</h2>
+        <form action="index.html" method="POST">
             <div class="input-group">
-                <label for="pet-name">Pet Name</label>
-                <input type="text" id="pet-name" name="pet_name" placeholder="Enter your pet's name" required>
+                <label for="pet-name">Амьтны нэр</label>
+                <input type="text" id="pet-name" name="pet_name" placeholder="Амьтныхаа нэрийг оруулна уу" required>
             </div>
             <div class="input-group">
-                <label for="pet-type">Type</label>
+                <label for="pet-type">Төрөл</label>
                 <select id="pet-type" name="pet_type" required>
-                    <option value="">Select Type</option>
-                    <option value="Dog">Dog</option>
-                    <option value="Cat">Cat</option>
-                    <option value="Bird">Bird</option>
-                    <option value="Other">Other</option>
+                    <option value="">Төрөл сонгоно уу</option>
+                    <option value="Dog">Нохой</option>
+                    <option value="Cat">Муур</option>
+                    <option value="Bird">Шувуу</option>
+                    <option value="Other">Бусад</option>
                 </select>
             </div>
             <div class="input-group">
-                <label for="breed">Breed</label>
-                <input type="text" id="breed" name="breed" placeholder="Enter breed (optional)">
+                <label for="breed">Үүлдэр</label>
+                <input type="text" id="breed" name="breed" placeholder="Үүлдрийг оруулах (сонголттой)">
             </div>
             <div class="input-group">
-                <label for="age">Age</label>
-                <input type="number" id="age" name="age" placeholder="Enter pet's age" min="0">
+                <label for="age">Нас</label>
+                <input type="number" id="age" name="age" placeholder="Амьтныхаа насыг оруулна уу" min="0">
             </div>
             <div class="input-group">
-                <label for="weight">Weight (kg)</label>
-                <input type="number" id="weight" name="weight" placeholder="Enter pet's weight" step="0.1">
+                <label for="weight">Жин (кг)</label>
+                <input type="number" id="weight" name="weight" placeholder="Амьтныхаа жинг оруулна уу" step="0.1">
             </div>
             <div class="input-group">
-                <label for="health-notes">Health Notes</label>
-                <textarea id="health-notes" name="health_notes" placeholder="Enter health details, vaccinations, etc." rows="4"></textarea>
+                <label for="health-notes">Эрүүл мэндийн тэмдэглэл</label>
+                <textarea id="health-notes" name="health_notes" placeholder="Эрүүл мэндийн мэдээлэл, вакцин гэх мэт оруулна уу" rows="4"></textarea>
             </div>
-            <button type="submit" class="btn-submit">Save Pet Info</button>
+            <button type="submit" class="btn-submit">Мэдээллийг хадгалах</button>
+            <div style="margin-top: 10px;"></div>
+            <button type="button" class="btn-submit" onclick="window.location.href='index.html'">Буцах</button>
         </form>
     </div>
 </body>

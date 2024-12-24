@@ -42,7 +42,7 @@
 
         .nav-links li a:hover {
             color: #1e90ff;
-            background-color: #ffcc00;
+            background-color: #76dce7;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
@@ -98,37 +98,52 @@
             margin-bottom: 30px;
         }
 
-        .service {
-            display: inline-block;
-            width: 30%;
-            margin: 0 15px;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
+        .services {
+    padding: 50px 30px;
+    background-color: #f4f4f4;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    gap: 30px; /* To add space between the services */
+    flex-wrap: wrap; /* Allow the items to wrap on smaller screens */
+}
 
-        .service:hover {
-            transform: scale(1.05);
-        }
+.service {
+    flex: 1 1 30%; /* Flex-grow, flex-shrink, and base width */
+    min-width: 280px; /* Ensures a minimum width for smaller screens */
+    margin: 0 15px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
-        .service i {
-            font-size: 50px;
-            color: #1e90ff;
-            margin-bottom: 15px;
-        }
+.service:hover {
+    transform: scale(1.05);
+}
 
-        .service h3 {
-            font-size: 24px;
-            color: #333;
-            margin-bottom: 10px;
-        }
+.service i {
+    font-size: 50px;
+    color: #1e90ff;
+    margin-bottom: 15px;
+}
 
-        .service p {
-            font-size: 16px;
-            color: #666;
-        }
+.service h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.service p {
+    font-size: 16px;
+    color: #666;
+}
+
     </style>
 </head>
 <body>
@@ -211,18 +226,18 @@
         <h2>Манай Үйлчилгээ</h2>
         <div class="service">
             <i class="fas fa-stethoscope"></i>
-            <h3>Эрүүл мэндийн үйлчилгээ</h3>
-            <p>Тэжээвэр амьтдын эмнэлгийн үзлэг, эмчилгээ, шинжилгээний үйлчилгээ үзүүлнэ.</p>
+            <h3>Амьтны эмнэлэгийн байршил</h3>
+            <p>Таньд ойр амьтны эмнэлэгийг харуулдаг ба тухайн эмнэлэгийн байршлыг зааж өгнө.</p>
         </div>
         <div class="service">
             <i class="fas fa-syringe"></i>
-            <h3>Вакцинжуулалт</h3>
-            <p>Тэжээвэр амьтдыг чухал вакцинуудтай цаг тухайд нь вакцинжуулах.</p>
+            <h3>Өвчний хайлт</h3>
+            <p>Тэжээвэр амьтан тань илэрч буй шинж тэмдэгээр хайхад байж болох өвчинг харуулж эмчилгээ хэлнэ .</p>
         </div>
         <div class="service">
             <i class="fas fa-paw"></i>
-            <h3>Гэрийн тэжээмэл амьтны асаргаа</h3>
-            <p>Тэжээвэр амьтанд өдөр тутмын асаргаа, хооллолт болон эрүүл мэндийн хяналт.</p>
+            <h3>Гэрийн тэжээмэл амьтны зөвлөгөө</h3>
+            <p>Тэжээвэр амьтан тань тавигдах ёстой энгийн зөвлөмж зөвлөгөөг хүргэнэ.</p>
         </div>
     </section>
     <!-- FAQ Section -->

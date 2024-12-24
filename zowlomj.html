@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дотор Муур, Нохой - Анхан Шатны Мэдлэг</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #2a9d8f;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #264653;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            padding: 14px 20px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #f4a261;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .content {
+            background-color: white;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .content h3 {
+            color: #264653;
+        }
+
+        footer {
+            background-color: #2a9d8f;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .list-item {
+            margin-bottom: 10px;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .image-container img {
+            width: 48%;
+            border-radius: 10px;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #f4a261;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .back-button:hover {
+            background-color: #e76f51;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Муур, Нохой - Анхан Шатны Мэдлэг</h1>
+        <p>Гэрийн тэжээвэр амьтдын тухай дэлгэрэнгүй мэдээлэл</p>
+    </header>
+
+    <nav>
+        <a href="#cats"> Муур</a>
+        <a href="#dogs">Нохой</a>
+    </nav>
+
+    <button class="back-button" onclick="window.location.href='index.html'">Буцах</button>
+
+
+    <div class="container">
+        <div class="content" id="cats">
+            <h2> Муур</h2>
+            <p>Муур нь гэрийн орчинд амьдардаг бөгөөд хүний оролцоотой байдаг. Тэд өдөр бүр өөрсдийн орчноо судалж, амралтаараа тухтай байрлах, тоглох, хооллох зэргийг хийхийг хүсдэг.</p>
+
+            <h3>Мууруудын тухай илүү дэлгэрэнгүй</h3>
+            <ul>
+                <li class="list-item"> Муурууд урьдчилан ойлгомжтой орчноос салж, өөрсдийн хооллох орчинг хайдаг. Муурууд сэргийлэхдээ орчны тааламжтай газарт өөрсдийн хоолныхоо том хэсгийг тавьдаг.</li>
+                <li class="list-item"><strong>Эрүүл мэнд:</strong> Мууруудын эрүүл мэндийг байнга хянах шаардлагатай. Тэдэнд өдөр тутмын дасгал, тоглоом хэрэгтэй байдаг бөгөөд өвчинд өртөхгүй байх шаардлагатай.</li>
+                <li class="list-item"><strong>Тэжээл:</strong> Мууруудын тэжээл нь ихэвчлэн мах, хүнсний ногоо, витамин болон амин дэмүүдээс бүрддэг. Тэдний хоолны зохистой сонголт нь эрүүл мэндэд сайн нөлөөтэй.</li>
+                <li class="list-item"><strong>Хувийн орчин:</strong> Муурууд олон нийтийн газар биш, бие даасан орчинд амьдардаг бөгөөд энэ нь тэдний стресс багатай, эрүүл амьдрах нөхцлийг бүрдүүлдэг.</li>
+            </ul>
+
+            <div class="image-container">
+                <img src="https://t3.ftcdn.net/jpg/02/36/99/22/360_F_236992283_sNOxCVQeFLd5pdqaKGh8DRGMZy7P4XKm.jpg" alt=" муур">
+                <img src="https://www.dreamiestreats.co.uk/sites/g/files/fnmzdf5196/files/2023-01/When-should-I-give-my-cat-catnip-detail.jpg" alt="Муур">
+            </div>
+        </div>
+
+        <div class="content" id="dogs">
+            <h2>Нохой</h2>
+            <p>Нохой нь гэрийн тэжээвэр амьтан бөгөөд хамгаалагч, нөхөрсөг, идэвхтэй байдаг. Тэд үргэлж хүний оролцоог шаарддаг бөгөөд амьдралын чанарыг сайжруулахад хувь нэмэр оруулдаг.</p>
+
+            <h3>Нохойны тухай илүү дэлгэрэнгүй</h3>
+            <ul>
+                <li class="list-item"><strong>Дасгал:</strong> Нохойг өдөр бүр тоглож, дасгал хийх хэрэгтэй. Тэд маш идэвхтэй байдаг учраас гэрт тогтмол хөдөлгөөн шаарддаг.</li>
+                <li class="list-item"> Нохой нь байнга анхаарал шаарддаг бөгөөд хүмүүстэй ойр байхын тулд тогтмол санаачлага гаргах хэрэгтэй.</li>
+                <li class="list-item"><strong>Хооллолт:</strong> Нохойнуудын хоол нь шим тэжээлтэй, төрөл бүрийн хоол хүнсийг агуулсан байдаг. Тэд илүү олон төрлийн хоол иддэг ч эрүүл мэндийн хувьд зөв тэжээл авах шаардлагатай.</li>
+                <li class="list-item"><strong>Хамгаалалт:</strong> Нохойнууд байнгын хамгаалагч байдаг бөгөөд амьдралыг сайхан болгоход тусалдаг. Тэдний хамгаалалт нь хуулийн хүрээнд ч чухал байдаг.</li>
+            </ul>
+
+            <div class="image-container">
+                <img src="https://placedog.net/400/300" alt="Нохой">
+                <img src="https://placedog.net/400/301" alt="Нохой тоглож байна">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Дотор Муур, Нохой. Бүх эрх хуулиар хамгаалагдсан.</p>
+    </footer>
+
+</body>
+</html>
